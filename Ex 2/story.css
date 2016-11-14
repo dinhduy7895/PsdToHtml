@@ -1,0 +1,105 @@
+.tru-story{
+    margin-top: -60px;
+}
+.banner p{
+	font-size: 47px;
+    position: absolute;
+    bottom: 191px;
+    left: 23%;
+    right: 17%;
+    line-height: 48px;
+    color: white;
+}
+.tru-story-header{
+	background-color: #5eb146;
+	color: white;
+	height: 60px;
+	padding: 20px 0px;
+}
+.tru-story-header h1{
+	font-size: 24px;
+}
+.tru-story-header span{
+	font-size: 11px;
+}
+#menu-right{
+	font-size: 7px;
+	padding-left: 20px;
+}
+.list{
+	padding: 0px;
+}
+.tru-story-list{
+	padding-top: 34px;
+}
+.tru-story-list>ul>li{
+	margin-left: 0px;
+	float: none;
+}
+.tru-story-list>ul>li:hover {
+	background-color: #eee;
+	width: 100%;
+}
+.tru-story-list>ul>li>a{
+	color: #404040;
+	font-size: 14px;
+	line-height: 50px;
+	padding-left: 15px;
+}
+.title{
+	padding-left: 25px;
+}
+.tru-story-content{
+	background-color: #e5e5e5;
+	color:#404040 ;
+}
+.tru-mis-and-vis-title{
+	padding-top: 31px;
+	padding-right: 76px;
+    background-color: white;
+}
+.tru-mis-and-vis-title h2{
+	color: #656565;
+	font-size: 21px;
+	padding-left: 40px;
+}
+.tru-mis-and-vis-title p{
+	color: #5eb146;
+	font-size: 26px;
+	padding: 40px 40px;
+	line-height: 35px;
+}
+.tru-mis-and-vis-content{
+	background-color: #5eb146;
+	margin: 0px -15px;
+}
+.text-content-tru-story{
+	padding: 50px 56px 0px 40px;
+}
+.tru-mis-and-vis-content p{
+	color: white;
+	font-size: 11px;
+}
+.tru-mis-and-vis-content .col-lg-6, .col-md-6{
+	padding: 0px;
+}
+#tieng-hoa{
+	font-family: 'tiengTau';
+}
+ #left {
+    padding: 40px;
+	color: #5eb146;
+	font-size: 20px;
+}
+ #right {
+ 	padding: 40px;
+	color: black;
+	font-size: 14px;
+}
+
+.tru-mis-and-vis-footer{
+	padding: 60px 0px;
+	margin: 0px -15px;
+	background-color: white;
+}
+

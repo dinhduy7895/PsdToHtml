@@ -1,0 +1,61 @@
+
+.slides{
+	width: 100%;
+}
+.banner>.slide #banner-caption{
+	position: absolute;
+    bottom: 198px;
+    left: 27%;
+    right: 27%;
+}
+#banner-caption>h3{
+	font-size: 40px;
+}
+#banner-caption>p{
+	color: white;
+	padding: 50px 0px 100px 0px;
+    font-size: 19px;
+}
+#banner-caption>span{
+	font-size: 15px;
+    border: 1px solid;
+    padding: 16px 33px;
+}
+
+.tru-image{
+	padding-top: 80px;
+}
+.title-pic{
+	position: relative;
+	color: white;
+}
+.title-pic >.caption{
+	position: absolute;
+	top: 96px;
+    left: 10%;
+    right: 10%;
+}
+.title-pic span{
+    font-size: 21px;
+    top: 100px;
+}
+.title-pic h2{
+	color: white;
+    top: 124px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.tru-award{
+    margin-bottom: 50px;
+	margin-top: 120px;
+}
+.tru-award h4{
+	font-size: 21px;
+	color: #65b54e;
+}
+.tru-award .award-logo{
+	margin-top: 60px;
+}
+.tru-award .award-logo>img{
+	padding: 0px 30px;
+}

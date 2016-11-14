@@ -1,0 +1,67 @@
+.banner{
+	height: 511px;
+	background-color: #515151;
+}
+.tru-event-detail{
+    margin-top: -60px;
+}
+
+.tru-event-detail-header{
+	background-color: #5eb146;
+	color: white;
+	height: 60px;
+	padding: 20px 0px;
+}
+.tru-event-detail-header h1{
+	font-size: 24px;
+}
+.tru-event-detail-header span{
+	font-size: 11px;
+}
+.banner p{
+	font-size: 47px;
+    position: absolute;
+    bottom: 191px;
+    left: 23%;
+    right: 17%;
+    line-height: 48px;
+    color: white;
+}
+.form-header p{
+	font-size: 26px;
+	padding: 45px 0px 33px 0px;
+}
+.form-header p{
+	font-size: 26px;
+	padding: 45px 0px 33px 0px;
+}
+.form-content{
+	height: 641px;
+	background-color: #e5e5e5;
+	padding: 43px 54px 62px 48px;
+}
+.title{
+	padding-left: 25px;
+}
+.tru-event-detail-detail{
+	padding: 53px 0px 100px 0px;	
+}
+.tru-event-detail-detail h2{
+	font-size: 20px;
+}
+.tru-event-detail-detail p{
+	font-size: 20px;
+
+}
+.tru-event-detail-detail #p2{
+	margin-top: 46px;
+}
+.end-paragraph{
+	padding-top: 61px;
+	padding-bottom: 78px;
+}
+.end-paragraph p{
+	font-size: 14.02px;
+	color: #919191;
+	padding-bottom: 31px;
+}

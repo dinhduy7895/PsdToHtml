@@ -1,0 +1,155 @@
+.tru-product{
+    margin-top: -60px;
+}
+.banner p{
+	font-size: 47px;
+    position: absolute;
+    bottom: 191px;
+    left: 23%;
+    right: 17%;
+    line-height: 48px;
+    color: white;
+}
+.tru-product-header{
+	background-color: #5eb146;
+	color: white;
+	height: 60px;
+	padding: 20px 0px;
+	padding-left: 15px;
+}
+.tru-product-header h2.center{
+  background-color: #00a2d2;
+  margin-top: -19px;
+  padding: 19px 19px 22px 15px;
+}    
+.tru-product-header .now{
+  padding: 0px;
+}
+
+.tru-product-header h1{
+	font-size: 24px;
+}
+.tru-product-header span{
+	font-size: 11px;
+}
+.list{
+	padding: 0px;
+}
+
+.tru-product-list>ul>li{
+	margin-left: 0px;
+	float: none;
+}
+.tru-product-list>ul>li:hover {
+	background-color: #eee;
+	width: 100%;
+}
+.tru-product-list>ul>li>a{
+	color: #404040;
+	font-size: 14px;
+	line-height: 50px;
+	padding-left: 15px;
+}
+.title{
+	padding-left: 25px;
+}
+.tru-product-content{
+	background-color: #e5e5e5;
+	color:#404040 ;
+}
+.tab-pane{
+	background-color: white;
+	padding: 0px 0px;
+}
+.category-header{
+	padding-top: 21px;
+}
+.category-title{
+	padding-top: 9px;
+}
+.category-title span#header{
+	color: #404040;
+	font-size: 21px;
+	padding-left: 25px;
+}
+.category-title span#quanlity{
+	color: #b8b8b8;
+	font-size: 12px;
+
+}
+.category-item-per-page {
+	padding: 0px;
+}
+.category-content{
+	padding-left: 40px;
+	padding-top: 20px;
+	padding-bottom: 41px;
+}
+.category-content ul>li{
+	padding-bottom: 45px;
+}
+#itemContainer .col-lg-4,  .col-md-4, .col-sm-4, .col-xs-4{
+	padding-left:  0px;
+	padding-right: 0px;
+}
+.caption{
+	padding-top: 20px;
+}
+.caption h3{
+	font-size: 18px;
+	color: #404040;
+	text-align: center;
+}
+.caption p{
+	font-size: 11.93px;
+	color: #919191;
+	padding-top: 18px;
+	text-align: center;
+}
+/*---------------*/
+a:focus, a:hover {
+	text-decoration: none;
+}
+.holder{
+	padding-right: 36px;
+}
+.holder a{
+	padding-right: 20px;
+}
+.holder span{
+	padding-right: 20px;
+}
+.jp-previous,.jp-next, .holder>a, .holder>span{
+	color: #b8b8b8;
+	cursor: pointer;
+	font-size: 12px;
+	font-family: 'Montserrat';
+}
+.holder a.jp-previous,.holder a.jp-next{
+	border: 2px solid #b8b8b8;
+	border-radius: 50%;
+	padding: 7px 10px 6px 9px;
+	bottom: -30%;
+}
+.holder a.jp-previous{
+	position: absolute;
+	left: 66%;
+}
+.holder a.jp-next{
+	position: absolute;
+	left: 88%;
+}
+a.jp-current{
+	color: black;
+}
+select{
+	color: #b8b8b8;
+	border-color:  #b8b8b8;
+	font-size: 12px;
+	font-family: 'Montserrat';
+	padding: 8px;
+}
+.select-page{
+	padding: 12px 0px 0px;
+
+}
