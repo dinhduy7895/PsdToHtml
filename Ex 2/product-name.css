@@ -172,7 +172,7 @@ i{
 .multi-item-carousel .carousel-inner .prev {
   left: -25%;
 }
-@media all and (transform-3d), (-webkit-transform-3d) {
+@media all  {
   .multi-item-carousel .carousel-inner > .item {
     transition: 1000ms  ease-in-out all;
             backface-visibility: visible;

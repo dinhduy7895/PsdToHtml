@@ -1,1182 +1,1483 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
-	<meta charset="UTF-8">
-	<title>TRULIFE PRODUCT</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="product.css">
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
-  	<script type="text/javascript" src="js/highlight.pack.js"></script>
-  	<script type="text/javascript" src="js/tabifier.js"></script>
-  	<script src="js/js.js"></script>
-  	<script src="js/jPages.js"></script>
-	<script>
-		$(function() {
-    /* initiate plugin */
-		    $("div.holder").jPages({
-		        containerID : "itemContainer",
-		        previous : "pre",
-		        next : "next",
-		        perPage : 12,
-		        midRange : 3,
-		        keyBrowse : true,
-		        callback : function(pages,items)
-		        {
-		        	$("span#quanlity").html(items.count + "PRODUCTS");
-		        }
-		    });
-		    /* on select change */
-		    $(document).ready(function(){
+    <meta charset="UTF-8">
+    <title>TRULIFE PRODUCT</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/highlight.pack.js"></script>
+    <script type="text/javascript" src="js/tabifier.js"></script>
+    <script src="js/js.js"></script>
+    <script src="js/jPages.js"></script>
+    <script>
+        $(function() {
+            /* initiate plugin */
+            $("div.holder").jPages({
+                containerID: "itemContainer",
+                previous: "pre",
+                next: "next",
+                perPage: 12,
+                midRange: 3,
+                keyBrowse: true,
+                callback: function(pages, items) {
+                    $("span#quanlity").html(items.count + "PRODUCTS");
+                }
+            });
+            /* on select change */
+            $(document).ready(function() {
 
-				$(".jp-next").text(">")
-				$(".jp-previous").text("<")
-			// $(".jp-next").html("<i class="+'"fa fa-angle-right"' +"aria-hidden="+ '"true"' + "></i>");	
-			// $(".jp-previous").html("<i class="+'"fa fa-angle-left"' +"aria-hidden="+ '"true"' + "></i>");	
-			});
-		    $("select").change(function(){
+                $(".jp-next").text(">")
+                $(".jp-previous").text("<")
+                    // $(".jp-next").html("<i class="+'"fa fa-angle-right"' +"aria-hidden="+ '"true"' + "></i>");	
+                    // $(".jp-previous").html("<i class="+'"fa fa-angle-left"' +"aria-hidden="+ '"true"' + "></i>");	
+            });
+            $("select").change(function() {
 
-			
-		        /* get new nº of items per page */
-		      var res = $(this).val();
-		      res = String(res);
-		      var textArray = res.split(" ");
-		      var newPerPage = parseInt( textArray[1] );
-		      /* destroy jPages and initiate plugin again */
-		      $("div.holder").jPages("destroy").jPages({
-		            containerID   : "itemContainer",
-		            perPage       : newPerPage
-		      });
-		      $(".jp-next").text(">")
-			  $(".jp-previous").text("<")
-		    });
-		});
-		
-	</script>
+
+                /* get new nº of items per page */
+                var res = $(this).val();
+                res = String(res);
+                var textArray = res.split(" ");
+                var newPerPage = parseInt(textArray[1]);
+                /* destroy jPages and initiate plugin again */
+                $("div.holder").jPages("destroy").jPages({
+                    containerID: "itemContainer",
+                    perPage: newPerPage
+                });
+                $(".jp-next").text(">")
+                $(".jp-previous").text("<")
+            });
+        });
+    </script>
 </head>
+
 <body>
-	<header class="head">
-		<div class="container">
-			<div class="row">
-				<div class="head-content">
-					<div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
-						<div class="logo">
-							<img alt="image"  class="img-responsive" src="img/logo.jpg" id="logo">
-						</div>
-					</div>
-					<div class="col-lg-10 col-md-10 col-sm-6 col-xs-6">
-						<div class="search">
-							<input type="text" name="searching" placeholder="SEARCH HERE" /><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-						</div>
-						<div class="navbar-header">
-						    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						        <span class="icon-bar"></span>
-						        <span class="icon-bar"></span>
-						        <span class="icon-bar"></span> 
-						    </button>
-					    </div>
-						<div class="collapse navbar-collapse menu" id="myNavbar">
-							<ul class="nav navbar-nav" >
-								<li><a href="trueLife_HOME.html">HOME</a></li>
-								<li><a href="trueLife_product.html">TRU product</a></li>
-								<li class="active" ><a href="trueLife_PRODUCT.html">TRU PRODUCTS</a></li>
-								<li><a href="truLife_WHATSNEW.html">WHAT'S NEW</a></li>
-								<li><a href="#">CAREERS</a></li>
-								<li><a href="trueLife_CONTACT.html">CONTACT US</a></li>
-							</ul>
-						</div> <!-- END MENU -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</header> <!-- end header --> 
-	<section class="banner">
-		<div class="social-icon">
-			<a href=""><i class="fa fa-facebook" ></i></a>
-			<a href=""><i class="fa fa-twitter" ></i></a>
-			<a href=""><i class="fa fa-linkedin" ></i></a>
-			<a href=""><i class="fa fa-instagram" ></i></a>
-		</div>
-		<div class="product_banner">
-			<img alt="image" class="img-responsive" src="img/story_banner.jpg"  style="width: 100%;">
-		</div>
-		<p class="center">Only with Pure, Natural, Quality ingredients, comes results.</p>
-	</section>
+    <header class="head">
+        <div class="container">
+            <div class="row">
+                <div class="head-content">
+                    <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+                        <div class="logo">
+                            <img alt="image" class="img-responsive" src="img/logo.jpg" id="logo">
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-6 col-xs-6">
+                        <div class="search">
+                            <input type="text" name="searching" placeholder="SEARCH HERE" /><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </div>
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse menu" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="trueLife_HOME.html">HOME</a>
+                                </li>
+                                <li><a href="trueLife_product.html">TRU product</a>
+                                </li>
+                                <li class="active"><a href="trueLife_PRODUCT.html">TRU PRODUCTS</a>
+                                </li>
+                                <li><a href="truLife_WHATSNEW.html">WHAT'S NEW</a>
+                                </li>
+                                <li><a href="#">CAREERS</a>
+                                </li>
+                                <li><a href="trueLife_CONTACT.html">CONTACT US</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- END MENU -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    <div class="banner">
+        <div class="social-icon">
+            <a href=""><i class="fa fa-facebook" ></i></a>
+            <a href=""><i class="fa fa-twitter" ></i></a>
+            <a href=""><i class="fa fa-linkedin" ></i></a>
+            <a href=""><i class="fa fa-instagram" ></i></a>
+        </div>
+        <div class="product_banner">
+            <img alt="image" class="img-responsive" src="img/story_banner.jpg" style="width: 100%;">
+        </div>
+        <p class="center">Only with Pure, Natural, Quality ingredients, comes results.</p>
+    </div>
 
-	<section class="tru-product">
-		<div class="container">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="tru-product-header ">
-					<div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-						<h1>PRODUCTS</h1>
-					</div>
-					<div class="col-lg-7 col-md-7 col-sm-4 col-xs-4">
-						<div class="title">
-							<span>HOME </span>
-							<span id="menu-right" class="glyphicon glyphicon-menu-right"></span>
-							<span>TRU PRODUCTS</span>
-						</div>
-					</div>
-					<div class="now col-lg-2 col-md-2 col-sm-4 col-xs-4">
-							<h2 class="center">ENQUIRE NOW</h2>
-					</div>
-				</div>
-			</div>
-			<div class="">
-				<div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
-					<div class="tru-product-content clearfix">
-						<div class="list col-lg-3 col-md-3 col-sm-6 col-xs-6">
-							<div class="tru-product-list">
-								<ul class="nav nav-pills">
-									<li class=" active"><a  data-toggle="pill"  href="#cage1">CATEGORY 1</a></li>
-									<li ><a data-toggle="pill" href="#truQua">CATEGORY 2</a></li>
-									<li ><a data-toggle="pill" href="#truVal">CATEGORY 3</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="tab-content">
-							<div id="cage1" class="tab-pane fade in active col-lg-9 col-md-9 col-sm-6 col-xs-6">
-								<div class="category" >
-									<div class="category-header clearfix">
-										<div class="category-title col-lg-5 col-md-5 col-sm-6 col-xs-6">
-											<span id="header">CATEGORY NAME </span> <span id="quanlity">(10 PRODUCTS)</span>
-										</div>
-										<div class=" category-item-per-page col-lg-7 col-md-7 col-sm-6 col-xs-6">
-											<div class="select-item col-lg-5 col-md-5 col-sm-6 col-xs-6 ">
-												<form action="#">
-													<select >
-														<option >View 12 per page</option>
-														<option >View 24 per page</option>
-													</select>
-												</form>
-											</div>
-											<div class="select-page col-lg-7 col-md-7 col-sm-6 col-xs-6">
-												<div class="holder">
+    <div class="tru-product">
+        <div class="container">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="tru-product-header ">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
+                        <h1>PRODUCTS</h1>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-4 col-xs-4">
+                        <div class="title">
+                            <span>HOME </span>
+                            <span id="menu-right" class="glyphicon glyphicon-menu-right"></span>
+                            <span>TRU PRODUCTS</span>
+                        </div>
+                    </div>
+                    <div class="now col-lg-2 col-md-2 col-sm-4 col-xs-4">
+                        <h2 class="center">ENQUIRE NOW</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6">
+                    <div class="tru-product-content clearfix">
+                        <div class="list col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                            <div class="tru-product-list">
+                                <ul class="nav nav-pills">
+                                    <li class=" active"><a data-toggle="pill" href="#cage1">CATEGORY 1</a>
+                                    </li>
+                                    <li><a data-toggle="pill" href="#truQua">CATEGORY 2</a>
+                                    </li>
+                                    <li><a data-toggle="pill" href="#truVal">CATEGORY 3</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tab-content">
+                            <div id="cage1" class="tab-pane fade in active col-lg-9 col-md-9 col-sm-6 col-xs-6">
+                                <div class="category">
+                                    <div class="category-header clearfix">
+                                        <div class="category-title col-lg-5 col-md-5 col-sm-6 col-xs-6">
+                                            <span id="header">CATEGORY NAME </span> <span id="quanlity">(10 PRODUCTS)</span>
+                                        </div>
+                                        <div class=" category-item-per-page col-lg-7 col-md-7 col-sm-6 col-xs-6">
+                                            <div class="select-item col-lg-5 col-md-5 col-sm-6 col-xs-6 ">
+                                                <form action="#">
+                                                    <select>
+                                                        <option>View 12 per page</option>
+                                                        <option>View 24 per page</option>
+                                                    </select>
+                                                </form>
+                                            </div>
+                                            <div class="select-page col-lg-7 col-md-7 col-sm-6 col-xs-6">
+                                                <div class="holder">
 
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="category-content clearfix">
-										<ul id="itemContainer">
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>	
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>
-											<li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-												<a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive"></a>
-												<div class="caption">
-												 	<h3>PRODUCT NAME</h3>
-												 	<p>Duis autem vel eum iriure Duis <br/>autem vel eum iriure dolor dolor </p>
-												 </div>
-											</li>				
-										</ul>							
-										<div class=" category-item-per-page col-lg-7 col-md-7 col-sm-6 col-xs-6 col-lg-offset-5 col-md-offset-5">
-											<div class="select-page col-lg-7 col-md-7 col-sm-6 col-xs-6 col-lg-offset-5 col-md-offset-5">
-												<div class="holder">
-												</div>
-											</div>
-										</div>
-									</div> <!-- END PAGE CONTENT -->
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-		<section class="tru-detail">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-					<h5>TRU STORY</h5>
-					<ul>
-						<li><a href="">Tru Quality</a></li>
-						<li><a href="">Tru Mission and Vision</a></li>
-						<li><a href="">Tru Values and Advocacy</a></li>
-						<li><a href="">Tru Team</a></li>
-						<li><a href="">Be Part of Our Team</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-					<h5>TRU PRODUCT</h5>
-					<ul>
-						<li><a href="">Beauty</a></li>
-						<li><a href="">Detox</a></li>
-						<li><a href="">EyeHealth</a></li>
-						<li><a href="">Overall Wellness</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-					<h5>TRULIFE WORLDWIDE</h5>
-					<ul>
-						<li><a href="">Trulife Singapore</a></li>
-						<li><a href="">Trulife US</a></li>
-						<li><a href="">Trulife Malaysia</a></li>
-						<li><a href="">Trulife Myanmar</a></li>
-						<li><a href="">Trulife Philippines</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-					<h5>TRULIFE WORLDWIDE</h5>
-					<p>Vivamus sagittis lacus vel augue laoreet rutrum dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. </p>
-					<input type="text" name="email"	placeholder="Enter your email address here " />
-						<button id="submit"><span class="glyphicon glyphicon-menu-right"></span></button>
-				</div>
-			</div>
-		</div>
-	</section> <!-- end tru0detail -->
-	<footer class="foot">
-		<div class="container">
-			<h4 class="fleft"> &copy; Copyright 2016. Poli Medical Company Pte Ltd. All rights reserved. </h4>
-			<h4 class ="fright"> Legal Notice    |    Privacy Statement</h4>
-		</div>
-	</footer>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="category-content clearfix">
+                                        <ul id="itemContainer">
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                            <li class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <a href="#"><img alt="foood" src="img/PN_swipe3.jpg" class="img-responsive">
+                                                </a>
+                                                <div class="caption">
+                                                    <h3>PRODUCT NAME</h3>
+                                                    <p>Duis autem vel eum iriure Duis
+                                                        <br/>autem vel eum iriure dolor dolor </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class=" category-item-per-page col-lg-7 col-md-7 col-sm-6 col-xs-6 col-lg-offset-5 col-md-offset-5">
+                                            <div class="select-page col-lg-7 col-md-7 col-sm-6 col-xs-6 col-lg-offset-5 col-md-offset-5">
+                                                <div class="holder">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END PAGE CONTENT -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tru-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <h5>TRU STORY</h5>
+                    <ul>
+                        <li><a href="">Tru Quality</a>
+                        </li>
+                        <li><a href="">Tru Mission and Vision</a>
+                        </li>
+                        <li><a href="">Tru Values and Advocacy</a>
+                        </li>
+                        <li><a href="">Tru Team</a>
+                        </li>
+                        <li><a href="">Be Part of Our Team</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <h5>TRU PRODUCT</h5>
+                    <ul>
+                        <li><a href="">Beauty</a>
+                        </li>
+                        <li><a href="">Detox</a>
+                        </li>
+                        <li><a href="">EyeHealth</a>
+                        </li>
+                        <li><a href="">Overall Wellness</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <h5>TRULIFE WORLDWIDE</h5>
+                    <ul>
+                        <li><a href="">Trulife Singapore</a>
+                        </li>
+                        <li><a href="">Trulife US</a>
+                        </li>
+                        <li><a href="">Trulife Malaysia</a>
+                        </li>
+                        <li><a href="">Trulife Myanmar</a>
+                        </li>
+                        <li><a href="">Trulife Philippines</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+                    <h5>TRULIFE WORLDWIDE</h5>
+                    <p>Vivamus sagittis lacus vel augue laoreet rutrum dolor auctor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. </p>
+                    <input type="text" name="email" placeholder="Enter your email address here " />
+                    <button id="submit"><span class="glyphicon glyphicon-menu-right"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end tru0detail -->
+    <footer class="foot">
+        <div class="container">
+            <h4 class="fleft"> &copy; Copyright 2016. Poli Medical Company Pte Ltd. All rights reserved. </h4>
+            <h4 class="fright"> Legal Notice    |    Privacy Statement</h4>
+        </div>
+    </footer>
 </body>
+
 </html>
